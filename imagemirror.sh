@@ -1,5 +1,6 @@
 #!/bin/bash
 
+MIRROR_REGISTRY=`oc get ImageContentSourcePolicy  image-policy-0 -o yaml | grep ocp/release | awk '{print $2}' |awk -F"/" '{print $1}'`
 echo "Mirror test images"
 input="$working_dir/imagelist"
 while IFS= read -r line
