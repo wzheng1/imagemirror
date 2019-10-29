@@ -2,7 +2,7 @@
 
 echo "Mirror test images"
 input="$working_dir/imagelist"
-while IFS=read -r line
+while IFS= read -r line
 do
   namespace=`echo "$line"| awk -F"/" '{print $2}'`
   imagename=`echo "$line"| awk -F"/" '{print $3}'`
